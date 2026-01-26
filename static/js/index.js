@@ -80,34 +80,63 @@ $(document).ready(function() {
         var withVideo = document.getElementById(withId);
         var withoutVideo = document.getElementById(withoutId);
         
+        console.log('Syncing videos:', withId, withoutId);
+        console.log('With video:', withVideo);
+        console.log('Without video:', withoutVideo);
+        
         if (withVideo && withoutVideo) {
+            var isSyncing = false;
+            
             // When the 'with' video plays, also play the 'without' video
             withVideo.addEventListener('play', function() {
-                withoutVideo.play();
+                if (!isSyncing) {
+                    isSyncing = true;
+                    console.log('With video playing, syncing without video');
+                    withoutVideo.play().catch(function(e) { console.error('Play error:', e); });
+                    isSyncing = false;
+                }
             });
             
             // When the 'with' video pauses, also pause the 'without' video
             withVideo.addEventListener('pause', function() {
-                withoutVideo.pause();
+                if (!isSyncing) {
+                    isSyncing = true;
+                    console.log('With video paused, syncing without video');
+                    withoutVideo.pause();
+                    isSyncing = false;
+                }
             });
             
             // When the 'with' video seeks, sync the 'without' video
             withVideo.addEventListener('seeked', function() {
-                withoutVideo.currentTime = withVideo.currentTime;
+                if (!isSyncing) {
+                    isSyncing = true;
+                    withoutVideo.currentTime = withVideo.currentTime;
+                    isSyncing = false;
+                }
             });
             
-            // Click on either video to play both
+            // Click on 'with' video to play both
             withVideo.addEventListener('click', function() {
+                console.log('With video clicked');
                 withVideo.currentTime = 0;
                 withoutVideo.currentTime = 0;
-                withVideo.play();
+                withVideo.play().catch(function(e) { console.error('Play error:', e); });
             });
             
+            // Click on 'without' video to play both
             withoutVideo.addEventListener('click', function() {
+                console.log('Without video clicked');
                 withVideo.currentTime = 0;
                 withoutVideo.currentTime = 0;
-                withVideo.play();
+                withVideo.play().catch(function(e) { console.error('Play error:', e); });
             });
+            
+            // Add pointer cursor to indicate clickability
+            withVideo.style.cursor = 'pointer';
+            withoutVideo.style.cursor = 'pointer';
+        } else {
+            console.error('Could not find videos:', withId, withoutId);
         }
     }
     

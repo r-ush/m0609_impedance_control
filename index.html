@@ -68,8 +68,8 @@
           <div class="navbar-dropdown">
             <a class="navbar-item" href="https://r-ush.github.io/rb10_admittance_control/">
               RB10 admittance control
-            <!-- </a>
-            <a class="navbar-item" href="https://github.com/SonYeongGwang/CoAS-Net">
+            </a>
+            <!-- <a class="navbar-item" href="https://github.com/SonYeongGwang/CoAS-Net">
               CoAS-Net
             </a>
             <a class="navbar-item" href="https://r-ush.github.io/">
@@ -162,26 +162,36 @@
     </div>
   </section>
 
+  <section class="section" style="padding: 0.0rem 1.0rem;">
+    <div class="container is-max-desktop">
+      <div class="content has-text-centered">
+        <p class="is-size-5">
+          <strong>Click on any video in each row to play</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section class="hero teaser">
     <div class="container is-max-desktop">
-      <div class="hero-body">
+      <div class="hero-body" style="padding: 1.5rem 1.5rem;">
         <div class="columns is-centered">
-          <div class="column">
-            <video id="erasing-with" autoplay muted playsinline height="100%">
-              <source src="./static/videos/erasing_with_Impedance.mp4" type="video/mp4">
-            </video>
-            <h2 class="subtitle has-text-centered">
-              <span class="dnerf">Impedance Control</span>
-                could be utilized for M0609 (Doosan) to push and grasp objects in a cluttered environment.
-            </h2>
-          </div>
           <div class="column">
             <video id="erasing-without" muted playsinline height="100%">
               <source src="./static/videos/erasing_without_Impedance.mp4" type="video/mp4">
             </video>
-            <h2 class="subtitle has-text-centered">
-              <span class="dnerf">Second Video</span>
-                description goes here.
+            <h2 class="subtitle has-text-centered is-size-6">
+              <span class="dnerf">Position Control</span>
+                is vulnerable to contact during teleoperation.
+            </h2>
+          </div>
+          <div class="column">
+            <video id="erasing-with" autoplay muted playsinline height="100%">
+              <source src="./static/videos/erasing_with_Impedance.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered is-size-6">
+              <span class="dnerf">Impedance Control</span>
+                enables stable contact maintenance during tasks with continuous force or impact.
             </h2>
           </div>
         </div>
@@ -189,26 +199,28 @@
     </div>
   </section>
 
+  <hr class="divider" style="margin: 1rem auto; max-width: 800px; border: 0; height: 0.5px; background-color: #dbdbdb;">
+
   <section class="hero teaser">
     <div class="container is-max-desktop">
-      <div class="hero-body">
+      <div class="hero-body" style="padding: 1.5rem 1.5rem;">
         <div class="columns is-centered">
-          <div class="column">
-            <video id="pivoting-with" autoplay muted playsinline height="100%">
-              <source src="./static/videos/pivoting_with_Impedance.mp4" type="video/mp4">
-            </video>
-            <h2 class="subtitle has-text-centered">
-              <span class="dnerf">Impedance Control</span>
-                could be utilized for M0609 (Doosan) to push and grasp objects in a cluttered environment.
-            </h2>
-          </div>
           <div class="column">
             <video id="pivoting-without" muted playsinline height="100%">
               <source src="./static/videos/pivoting_without_Impedance.mp4" type="video/mp4">
             </video>
-            <h2 class="subtitle has-text-centered">
-              <span class="dnerf">Second Video</span>
-                description goes here.
+            <h2 class="subtitle has-text-centered is-size-6">
+              <span class="dnerf">Position Control</span>
+                is vulnerable to robot motion in constrained environments such as pivoting.
+            </h2>
+          </div>
+          <div class="column">
+            <video id="pivoting-with" autoplay muted playsinline height="100%">
+              <source src="./static/videos/pivoting_with_Impedance.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered is-size-6">
+              <span class="dnerf">Impedance Control</span>
+                enables performing challenging tasks even in the presence of external constraints.
             </h2>
           </div>
         </div>
