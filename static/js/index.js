@@ -75,4 +75,44 @@ $(document).ready(function() {
 
     bulmaSlider.attach();
 
+    // Synchronize video pairs
+    function syncVideos(withId, withoutId) {
+        var withVideo = document.getElementById(withId);
+        var withoutVideo = document.getElementById(withoutId);
+        
+        if (withVideo && withoutVideo) {
+            // When the 'with' video plays, also play the 'without' video
+            withVideo.addEventListener('play', function() {
+                withoutVideo.play();
+            });
+            
+            // When the 'with' video pauses, also pause the 'without' video
+            withVideo.addEventListener('pause', function() {
+                withoutVideo.pause();
+            });
+            
+            // When the 'with' video seeks, sync the 'without' video
+            withVideo.addEventListener('seeked', function() {
+                withoutVideo.currentTime = withVideo.currentTime;
+            });
+            
+            // Click on either video to play both
+            withVideo.addEventListener('click', function() {
+                withVideo.currentTime = 0;
+                withoutVideo.currentTime = 0;
+                withVideo.play();
+            });
+            
+            withoutVideo.addEventListener('click', function() {
+                withVideo.currentTime = 0;
+                withoutVideo.currentTime = 0;
+                withVideo.play();
+            });
+        }
+    }
+    
+    // Sync each video pair
+    syncVideos('erasing-with', 'erasing-without');
+    syncVideos('pivoting-with', 'pivoting-without');
+
 })
