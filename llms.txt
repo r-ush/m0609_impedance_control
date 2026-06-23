@@ -1,0 +1,24 @@
+# Impedance Control with M0609 (Doosan)
+
+> A personal research project by Seunghwan Um and Tae Hyun Bae at Sungkyunkwan University.
+
+## Overview
+
+This project implements impedance control on a Doosan M0609 collaborative robot arm.
+Position control alone is vulnerable to contact during teleoperation — when the robot encounters continuous force, impact, or constrained environments (e.g., pivoting), it cannot react compliantly.
+
+Impedance control enables:
+- Stable contact maintenance during tasks involving continuous force or impact
+- Safe operation in constrained environments such as pivoting tasks
+- Compliant response to external disturbances during teleoperation
+
+## Demonstrations
+
+- **Erasing task**: Position control fails upon contact, while impedance control maintains stable contact with the surface.
+- **Pivoting task**: Position control struggles in constrained motion, while impedance control enables smooth pivoting despite external constraints.
+
+## Links
+
+- Project page: https://r-ush.github.io/m0609_impedance_control/
+- Code: https://github.com/r-ush/m0609_impedance_control
+- Author homepage: https://r-ush.github.io
