@@ -1,6 +1,6 @@
 # Impedance Control with M0609 (Doosan)
 
-> A personal research project by Seunghwan Um and Tae Hyun Bae at Sungkyunkwan University.
+> A personal research project by Seunghwan Um (엄승환 / rush / r-ush) and Tae Hyun Bae at Sungkyunkwan University.
 
 ## Overview
 
