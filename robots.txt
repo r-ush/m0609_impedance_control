@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+User-agent: Yeti
+Allow: /
+
 Sitemap: https://r-ush.github.io/m0609_impedance_control/sitemap.xml
